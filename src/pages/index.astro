@@ -1,0 +1,82 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
+);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <main>
+      <Header />
+      <h1 id="main-heading">sam fitzgerald</h1>
+      <p>
+        i live in new york city; i work at{" "}
+        <a rel="noreferrer" target="_blank" href="https://retool.com">
+          retool.com
+        </a>
+      </p>
+      <p>
+        email: <a href="mailto:sam@samfitz.me">sam@samfitz.me</a>
+      </p>
+      <p>
+        i can be found{" "}
+        <a
+          rel="noreferrer"
+          href="https://twitter.com/therealsamfitz"
+          target="_blank"
+        >
+          @therealsamfitz
+        </a>{" "}
+        on most platforms, i&apos;m{" "}
+        <a rel="noreferrer" href="https://github.com/samfitz13" target="_blank">
+          samfitz13
+        </a>{" "}
+        on github, and i own samfitz.eth i enjoy art, house music, programming, playing
+        guitars and synthesizers, and travel.
+      </p>
+      <h2>
+        <a href="/about">about me</a>
+      </h2>
+      <ul>
+        <li>iowa state university class of 2019 - b.s. economics</li>
+        <li>granular.ag sales 2019-mid 2020</li>
+        <li>salesforce.com sales mid 2020-late 2021</li>
+        <li>retool.com sales eng 2021+</li>
+      </ul>
+      <h2>
+        <a href="/blog">recent blog posts</a>
+      </h2>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <time datetime={post.frontmatter.pubDate}>
+                {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                  "en-us",
+                  {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  }
+                )}
+              </time>
+              <a href={post.url}>{post.frontmatter.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+      <Footer />
+    </main>
+  </body>
+</html>

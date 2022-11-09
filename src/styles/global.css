@@ -1,0 +1,50 @@
+main {
+  margin: 0 auto;
+  max-width: 50em;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  padding: 1em;
+  color: #566b78;
+}
+
+#main-heading {
+  color: #008083;
+}
+
+h1 {
+  margin-top: 1em;
+  padding-top: 1em;
+}
+
+h1,
+h2,
+strong {
+  color: #333;
+}
+
+a {
+  color: #fd5901;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #008083;
+}
+
+footer {
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  font-family: Helvetica, Arial, sans-serif;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+  display: inline-block;
+}
