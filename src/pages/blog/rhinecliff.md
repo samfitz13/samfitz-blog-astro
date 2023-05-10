@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Rhinecliff"
-description: "I am finishing this web site version, and writing this post on the way to woodstock, ny, by way of the rhinecliff station. Views of the hudson on one side, and a mere half dozen or so stops to our destination."
+description: "I am finishing this web site version, and writing this post on the way to woodstock, ny, by way of the rhinecliff station."
 pubDate: "Jun 10 2022"
 heroImage: "/rhinecliff.png"
 ---
