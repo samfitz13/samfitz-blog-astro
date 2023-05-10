@@ -1,3 +1,6 @@
+@console-color: #14fdce;
+@console-bg: #031e11;
+
 main {
   margin: 0 auto;
   max-width: 50em;
@@ -5,10 +8,6 @@ main {
   line-height: 1.5;
   padding: 1em;
   color: #566b78;
-  animation-duration: 0.01s;
-  animation-name: textflicker;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
 #main-heading {
@@ -52,13 +51,4 @@ img {
   max-width: 100%;
   vertical-align: top;
   display: inline-block;
-}
-
-@keyframes textflicker {
-  from {
-    text-shadow: 1px 0 0 #ea37af, -2px 0 0 #75fa69;
-  }
-  to {
-    text-shadow: 2px 0.5 2px #ea37af, -1px -0.5px 2px #75fa69;
-  }
 }
